@@ -1,0 +1,23 @@
+{
+  "name": "elk-notifier",
+  "version": "1.0.0",
+  "description": "ELK free tier notifier",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dashih/elk-notifier.git"
+  },
+  "author": "dshih",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dashih/elk-notifier/issues"
+  },
+  "homepage": "https://github.com/dashih/elk-notifier#readme",
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.2.1",
+    "@slack/web-api": "^6.7.2"
+  }
+}
