@@ -54,6 +54,15 @@ const slackGracePeriod = 5000;
 // But it does allow storing alerts in ES indexes, so we use that and poll.
 [
     {
+        esIndex: 'alerts-docker-log-errors',
+        getSubjectFunc: alert => {
+            return `Docker container: ${alert._source.container_name}`;
+        },
+        getMessageFunc: alert => {
+            return alert._source.message;
+        }
+    },
+    {
         esIndex: 'alerts-log-errors',
         getSubjectFunc: alert => {
             return alert._source.log.file.path;
