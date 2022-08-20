@@ -1,3 +1,10 @@
+//
+// ELK free tier disallows actually notifying you of alerts via email, Slack, SMS, etc.
+// But it does allow storing alerts in ES indexes, so we do that and use this script
+// to poll and send any entries using Slack's free tier.
+// This docker image is intended to be run periodically using system cron.
+//
+
 'use strict';
 
 const fs = require('fs');
@@ -50,8 +57,7 @@ const slackGracePeriod = 5000;
     }
 })();
 
-// ELK free tier disallows actually notifying you of alerts via email, Slack, SMS, etc.
-// But it does allow storing alerts in ES indexes, so we use that and poll.
+// Checks various ES indexes that would have been populated by ELK alerts.
 [
     {
         esIndex: 'alerts-docker-log-errors',
