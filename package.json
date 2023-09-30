@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/dashih/elk-notifier#readme",
   "dependencies": {
-    "@elastic/elasticsearch": "^8.7.0",
-    "@slack/web-api": "^6.8.1"
+    "@elastic/elasticsearch": "^8.10.0",
+    "@slack/web-api": "^6.9.0"
   }
 }
