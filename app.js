@@ -112,6 +112,15 @@ const slackGracePeriod = 5000;
         getMessageFunc: alert => {
             return `${alert._source.container.name} is ${alert._source.docker.container.status}`;
         }
+    },
+    {
+        esIndex: 'alerts-temps',
+        getSubjectFunc: alert => {
+            return 'High SFP adapter temp on core switch';
+        },
+        getMessageFunc: alert => {
+            return ` ${alert._source.virtSrvSfpTemp}C`;
+        }
     }
 ].forEach(async alertType => {
     const result = await esClient.search({
