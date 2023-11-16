@@ -119,7 +119,7 @@ const slackGracePeriod = 5000;
             return 'High temperature';
         },
         getMessageFunc: alert => {
-            return ` ${alert._source}`;
+            return alert._source.message;
         }
     }
 ].forEach(async alertType => {
