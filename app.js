@@ -116,10 +116,10 @@ const slackGracePeriod = 5000;
     {
         esIndex: 'alerts-temps',
         getSubjectFunc: alert => {
-            return 'High SFP adapter temp on core switch';
+            return 'High temperature';
         },
         getMessageFunc: alert => {
-            return ` ${alert._source.virtSrvSfpTemp}C`;
+            return ` ${alert._source}`;
         }
     }
 ].forEach(async alertType => {
